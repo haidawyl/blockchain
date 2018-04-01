@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>成语接龙-艾特密区块链研究组</title>
+
+    <meta name="keywords" content="成语接龙-艾特密区块链研究组"/>
+    <meta name="description" content="成语接龙-艾特密区块链研究组"/>
+
+    <script src="{{url_for('static', filename='js/jquery/jquery.min.js', v=2.1.4)}}"></script>
+</head>
+
+<body>
+<h1>
+    欢迎使用区块链成语接龙。 <br>
+</h1>
+<div>
+    <label for="nodes">请输入新的节点地址：</label><br/>
+    <textarea id="nodes" name="nodes" rows="5" cols="50" placeholder="http://192.168.0.1:5000&#10;http://192.168.0.2:5000&#10;......"></textarea>
+</div>
+<button type="button" onclick="submit()">确定</button>
+<script type="text/javascript">
+    // 关注保存
+    function submit() {
+        var nodes = $('#nodes').val();
+        $.ajax({
+            url: "/nodes/register",
+            type: "post",
+            data: {"nodes": nodes},
+            cache: false,//false是不缓存，true为缓存
+            async: true,//true为异步，false为同步
+            beforeSend: function () {
+                //请求前
+            },
+            success: function (result) {
+                //请求成功时
+                alert(result.message);
+                $('#nodes').val("");
+            },
+            complete: function () {
+                //请求结束时
+            },
+            error: function () {
+                //请求失败时
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

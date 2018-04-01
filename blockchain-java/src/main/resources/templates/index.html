@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>成语接龙-艾特密区块链研究组</title>
+
+    <meta name="keywords" content="成语接龙-艾特密区块链研究组"/>
+    <meta name="description" content="成语接龙-艾特密区块链研究组"/>
+
+    <script th:attr="src=@{/js/jquery/jquery.min.js?v=2.1.4}"></script>
+
+    <link th:href="@{/img/favicon.ico}" rel="shortcut icon"/>
+</head>
+
+<body>
+<h1>
+    欢迎使用区块链成语接龙。 <br>
+</h1>
+<div id="message">
+</div>
+<form action="/blockchain/chain" method="post">
+    <div>
+        <label for="phone">请输入你的手机号码：</label>
+        <input type="text" name="phone" placeholder="手机号码" id="phone"/>
+    </div>
+    <button type="submit">开始游戏</button>
+</form>
+<script type="text/javascript" th:inline="javascript">
+</script>
+</body>
+</html>
